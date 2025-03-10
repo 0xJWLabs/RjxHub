@@ -134,10 +134,13 @@ end
 if not PreloadedConstants.IsDev then
 	do
 		if game.PlaceVersion >= 3744 then
-			local URL = "https://raw.githubusercontent.com/centerepic/sasware-fisch/refs/heads/main/bypasses/V3.luau"
+			print("Bypassing")
+			local URL = "https://raw.githubusercontent.com/0xJWLabs/RjxHub/refs/heads/main/bypasses/V3.luau"
 			local Success, Error = pcall(function()
 				return loadstring(game:HttpGet(URL))()
 			end)
+
+			print("Bypassed")
 
 			if not Success then
 				Player:Kick("Failed to load RjxGuard! " .. Error)
