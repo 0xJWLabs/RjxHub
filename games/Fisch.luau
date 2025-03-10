@@ -47,8 +47,8 @@ if not setthreadidentity then
 end
 
 -- Modules
-if getgenv and getgenv().rjxhub_fisch_unload then
-	pcall(getgenv().rjxhub_fisch_unload)
+if getgenv and getgenv().sasware_fisch_unload then
+	pcall(getgenv().sasware_fisch_unload)
 end
 
 local Library = loadstring(game:HttpGet("https://github.com/0xJWLabs/FluentRenewed/releases/download/0.1.0/Fluent.luau"))()
@@ -122,20 +122,20 @@ local function Unload()
 	Library = nil
 	
 	if getgenv then
-		getgenv().rjxhub_fisch_unload = nil
+		getgenv().sasware_fisch_unload = nil
 	end
 	Unloaded = true
 end
 
 if getgenv then
-	getgenv().rjxhub_fisch_unload = Unload
+	getgenv().sasware_fisch_unload = Unload
 end
 
 if not PreloadedConstants.IsDev then
 	do
 		if game.PlaceVersion >= 3744 then
 			print("Bypassing")
-			local URL = "https://raw.githubusercontent.com/0xJWLabs/RjxHub/refs/heads/main/bypasses/V3.luau"
+			local URL = "https://raw.githubusercontent.com/centerepic/sasware-fisch/refs/heads/main/bypasses/V3.luau"
 			local Success, Error = pcall(function()
 				return loadstring(game:HttpGet(URL))()
 			end)
@@ -143,7 +143,8 @@ if not PreloadedConstants.IsDev then
 			print("Bypassed")
 
 			if not Success then
-				Player:Kick("Failed to load RjxGuard! " .. Error)
+				print(Error)
+				-- Player:Kick("Failed to load RjxGuard! " .. Error)
 			end
 		end
 	end

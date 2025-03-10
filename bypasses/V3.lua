@@ -1,4 +1,4 @@
-local function clone<Original>(ToClone: any & Original): Original
+local function clone(ToClone): Original
 	if cloneref or clonereference then
 		return ToClone
 	end
@@ -6,7 +6,7 @@ local function clone<Original>(ToClone: any & Original): Original
 	return ToClone
 end
 
-repeat task.wait() until getgenv().rjxhub_fisch_unload
+repeat task.wait() until getgenv().sasware_fisch_unload
 
 BYPASS_SUBVERSION = "Full-Emulationv2"
 
